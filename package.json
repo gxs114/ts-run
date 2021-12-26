@@ -1,0 +1,23 @@
+{
+  "name": "ts-run",
+  "version": "0.0.1",
+  "description": "Execute TS like JS, which is the same as `ts-node`, but the bottom layer is based on esbuild, which is faster",
+  "keywords": [
+    "ts",
+    "ts-node",
+    "ts node",
+    "ts-run",
+    "ts run"
+  ],
+  "author": "gsx114/usagisah",
+  "type": "module",
+  "bin": {
+    "ts-run": "./.bin/run.mjs"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/source-map-support": "^0.5.4",
+    "esbuild": "^0.14.8",
+    "source-map-support": "^0.5.21"
+  }
+}
