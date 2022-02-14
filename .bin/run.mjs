@@ -26,10 +26,14 @@ const run = async () => {
     outfile: resolveBuildPath(),
     sourcemap: 'inline',
     sourcesContent: true,
-    platform: "node"
+    platform: 'node'
   })
-  sourceMapSupport.install()
-  await import(resolveBuildPath())
+  sourceMapSupport
+    .install()(await import(resolveBuildPath()))
+    .catch(err => {
+      throw err
+      process.exit(1)
+    })
 }
 
 const close = async () => {
@@ -42,4 +46,4 @@ const close = async () => {
 process.on('exit', close)
 process.on('SIGINT', close)
 
-run().catch(() => {})
+run()

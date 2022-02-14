@@ -1,6 +1,6 @@
 {
-  "name": "ts-run",
-  "version": "0.0.1",
+  "name": "@gxs/ts-run",
+  "version": "0.0.2",
   "description": "Execute TS like JS, which is the same as `ts-node`, but the bottom layer is based on esbuild, which is faster",
   "keywords": [
     "ts",
