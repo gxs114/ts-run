@@ -28,12 +28,11 @@ const run = async () => {
     sourcesContent: true,
     platform: 'node'
   })
-  sourceMapSupport
-    .install()(await import(resolveBuildPath()))
-    .catch(err => {
-      throw err
-      process.exit(1)
-    })
+  sourceMapSupport.install()
+  ;(await import(resolveBuildPath())).catch(err => {
+    throw err
+    process.exit(1)
+  })
 }
 
 const close = async () => {
